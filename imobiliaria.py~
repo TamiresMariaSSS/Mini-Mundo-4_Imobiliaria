@@ -14,3 +14,19 @@ class Imovel(object):
         self._preco_venda = 0
         self.novo_proprietario = None
         self.antigo_proprietario = None
+        
+class Proprietario(object):
+    lista_proprietarios = []
+    def __init__(self, nome, cpf, endereco, telefone):
+		        
+		self.nome = nome
+		self.cpf = cpf
+		self.endereco = endereco
+		self.telefone = telefone
+
+    def cadastrar_proprietario(self):
+        if self not in Proprietario.lista_proprietarios:
+            Proprietario.lista_proprietarios.append(self)
+        else:
+            raise ValueError("Error no Cadastro de Proprietário!")
+
